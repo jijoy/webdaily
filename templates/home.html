@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+<head><title></title>
+<link rel="stylesheet" href="/static/css/bootstrap.css">
+<script src="/static/js/jquery-1.12.0.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/main.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+  		<div class="row">
+  		
+  		{% if user %}
+  			Welcome, {{user.nickname()}} <a href="{{url}}">sign out</a>
+  			
+			<div class="row">
+				<a href="add">Add</a>
+				<a href="update">Update</a>
+				<a href="delete">Delete</a>
+				<a href="search">Search</a>
+			</div>	  			
+  		{% else %}
+  			<a href="{{url}}">Sign in or register</a>
+  		{% endif %}
+		</div>
+	
+	</div>
+  </body>
+</html>
+{% endautoescape %}
